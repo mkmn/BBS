@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+  color: black;
+  background-color: #FFFACD;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  &:link     { color: #00C; }
+  &:visited  { color: #A08; }
+  &:hover    { color: #CCF; }
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+#container {
+  width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#header {
+  margin: 0;
+  padding: 0;
+}
+
+#footer {
+  background-color: #CCC;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+
+#content {
+  padding: 10px;
+}
+
+#menu {
+  color: white;
+  background-color: black;
+  margin: 0;
+  padding: 5px;
+  text-align: right;
+
+  a {
+    &:link     { color: #CCC; }
+    &:visited  { color: #ECC; }
+  }
+}
+
+#threads {
+  background-color: white;
+  width: 850px;
+  margin: 0 auto;
+  padding: 0;
+
+  th {
+    background-color: #00BFFF;
+    padding: 5px;
+  }
+  
+  td {
+    padding: 5px;
+  }
+
+  .time {
+    width: 150px;
+  }
+}
