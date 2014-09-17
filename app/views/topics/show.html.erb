@@ -1,0 +1,16 @@
+<h2 id="thread-title">スレッドタイトル</h2>
+<% 10.times do |x| %>
+  <div class="article">
+    <div class="article-header">
+      [<%= x %>]
+      <%= mail_to 'hogehoge', '投稿者' %> - 
+      <%= Time.now.strftime("%Y/%m/%d %H:%M:%S") %>
+    </div>
+    <div class="article-body">
+      ここに本文が入ります<br>
+      ここに本文が入ります<br>
+      ここに本文が入ります<br>
+      ここに本文が入ります
+    </div>
+  </div>
+<% end %>

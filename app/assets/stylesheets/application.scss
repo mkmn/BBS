@@ -85,3 +85,29 @@ table, th, td {
     width: 150px;
   }
 }
+
+#thread-title {
+  background-color: white;
+  width: 760px; 
+  margin: 20px auto;
+  padding: 5px 20px;
+  border: 1px solid black;
+  border-radius: 10px 10px;
+}
+
+.article {
+  background-color: white;
+  width: 770px;
+  margin: 10px auto;
+  padding: 0;
+  border: 1px solid black;
+
+  .article-header {
+    background-color: #00BFFF;
+    padding: 5px 15px
+  }
+
+  .article-body {
+    margin: 20px 40px;
+  }
+}
