@@ -8,12 +8,12 @@
     </tr>
   </thead>
   <tbody>
-    <% 10.times do |x| %>
+    <% @topics.each do |topic| %>
       <tr>
-        <td><%= link_to 'タイトル' %></td>
+        <td><%= link_to topic.title, topic %></td>
         <td>0</td>
-        <td class="time"><%= Time.now.strftime("%Y/%m/%d %H:%M:%S") %></td>
-        <td class="time"><%= Time.now.strftime("%Y/%m/%d %H:%M:%S") %></td>
+        <td class="time"><%= topic.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+        <td class="time"><%= topic.updated_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
       </tr>
     <% end %>
   </tbody>
