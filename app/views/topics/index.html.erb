@@ -2,7 +2,6 @@
   <thead>
     <tr>
       <th>スレッドタイトル</th>
-      <th>投稿者</th>
       <th>記事数</th>
       <th class="time">投稿日</th>
       <th class="time">最終更新日</th>
@@ -12,7 +11,6 @@
     <% 10.times do |x| %>
       <tr>
         <td><%= link_to 'タイトル' %></td>
-        <td>投稿者</td>
         <td>0</td>
         <td class="time"><%= Time.now.strftime("%Y/%m/%d %H:%M:%S") %></td>
         <td class="time"><%= Time.now.strftime("%Y/%m/%d %H:%M:%S") %></td>
