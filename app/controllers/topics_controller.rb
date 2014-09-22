@@ -8,6 +8,8 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @topic = Topic.new
+    @topic.articles.build
   end
 
   def create

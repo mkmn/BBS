@@ -18,4 +18,9 @@ class TopicsControllerTest < ActionController::TestCase
     assert_equal 10, assigns[:topic].articles.count
     assert_select ".article", 10
   end
+
+  test "new" do
+    get :new
+    assert_response :success
+  end
 end

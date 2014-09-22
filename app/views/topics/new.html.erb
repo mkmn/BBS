@@ -1,0 +1,25 @@
+<h2>新規スレッド投稿</h2>
+
+<%= form_for @topic do |form| %>
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <%= form.fields_for :articles do |article| %>
+    <div class="form-group">
+      <%= article.label :poster %>
+      <%= article.text_field :poster %>
+    </div>
+    <div class="form-group">
+      <%= article.label :email %>
+      <%= article.text_field :email %>
+    </div>
+    <div class="form-group">
+      <%= article.label :body %>
+      <%= article.text_area :body %>
+    </div>
+  <% end %>
+  <div class="form-group center">
+    <%= form.submit %>
+  </div>
+<% end %>
