@@ -1,16 +1,13 @@
-<h2 id="thread-title">スレッドタイトル</h2>
-<% 10.times do |x| %>
+<h2 id="thread-title"><%= @topic.title %></h2>
+<% @topic.articles.each.with_index(1) do |article, index| %>
   <div class="article">
     <div class="article-header">
-      [<%= x %>]
-      <%= mail_to 'hogehoge', '投稿者' %> - 
-      <%= Time.now.strftime("%Y/%m/%d %H:%M:%S") %>
+      [<%= index %>]
+      <%= mail_to article.email, article.poster %> - 
+      <%= article.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
     </div>
     <div class="article-body">
-      ここに本文が入ります<br>
-      ここに本文が入ります<br>
-      ここに本文が入ります<br>
-      ここに本文が入ります
+      <%= sanitize(simple_format(article.body), tag: %w(p br)) %>
     </div>
   </div>
 <% end %>

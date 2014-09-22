@@ -4,16 +4,14 @@
       <th>スレッドタイトル</th>
       <th>記事数</th>
       <th class="time">投稿日</th>
-      <th class="time">最終更新日</th>
     </tr>
   </thead>
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
         <td><%= link_to topic.title, topic %></td>
-        <td>0</td>
+        <td><%= topic.articles.count %></td>
         <td class="time"><%= topic.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
-        <td class="time"><%= topic.updated_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
       </tr>
     <% end %>
   </tbody>
