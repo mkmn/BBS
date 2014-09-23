@@ -70,6 +70,13 @@ table, th, td {
   }
 }
 
+#error {
+  color: red;
+  background-color: #FFE4E1;
+  margin: 10px auto;
+  border: 5px double red;
+}
+
 #threads {
   background-color: white;
   width: 850px;

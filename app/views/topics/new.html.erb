@@ -1,5 +1,7 @@
 <h2>新規スレッド投稿</h2>
 
+<%= render "common/error", object: @topic %>
+
 <%= form_for @topic do |form| %>
   <div class="form-group">
     <%= form.label :title %>
