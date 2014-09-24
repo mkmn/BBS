@@ -36,4 +36,13 @@ class TopicsControllerTest < ActionController::TestCase
     assert_response :success
     assert_template "new"
   end
+
+  test "pagination" do
+    20.times {
+      Factory(:topic)
+    }
+    get :index
+    assert_response :success
+    assert_equal 10, assigns[:topics].count
+  end
 end

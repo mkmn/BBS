@@ -5,6 +5,8 @@ class Topic < ActiveRecord::Base
 
   accepts_nested_attributes_for :articles
 
+  paginates_per 10
+
   validates :title,
     presence: true,
     length: { minimum: 5, maximum: 100 }

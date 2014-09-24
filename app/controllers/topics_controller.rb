@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.order("updated_at DESC")
+    @topics = Topic.order("updated_at DESC").page(params[:page])
   end
 
   def show
