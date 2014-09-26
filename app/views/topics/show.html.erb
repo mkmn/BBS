@@ -1,4 +1,7 @@
 <h2 id="thread-title"><%= @topic.title %></h2>
+
+<%= render "common/error", object: @article %>
+
 <% @topic.articles.each.with_index(1) do |article, index| %>
   <div class="article">
     <div class="article-header">
@@ -11,3 +14,6 @@
     </div>
   </div>
 <% end %>
+
+<h2>投稿する</h2>
+<%= render "articles/form" %>
