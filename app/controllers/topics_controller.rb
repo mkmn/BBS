@@ -13,5 +13,12 @@ class TopicsController < ApplicationController
   end
 
   def create
+    @topic = Topic.new(params[:topic])
+
+    if @topic.save
+      redirect_to :topics, notice: "新規スレッドを作成しました"
+    else
+      render "new"
+    end
   end
 end

@@ -23,4 +23,17 @@ class TopicsControllerTest < ActionController::TestCase
     get :new
     assert_response :success
   end
+
+  test "create" do
+    post :create, topic: Factory.attributes_for(:topic)
+    topic = assigns[:topic]
+    assert_redirected_to :topics
+  end
+
+  test "fail to create" do
+    attrs = Factory.attributes_for(:topic, title: "")
+    post :create, topic: attrs
+    assert_response :success
+    assert_template "new"
+  end
 end
