@@ -1,0 +1,7 @@
+<h2>投稿編集</h2>
+
+<%= render "common/error", object: @article %>
+
+<%= form_for [:admin, @topic, @article] do |form| %>
+  <%= render "articles/form", form: form %>
+<% end %>

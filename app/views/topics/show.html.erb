@@ -16,4 +16,7 @@
 <% end %>
 
 <h2>投稿する</h2>
-<%= render "articles/form" %>
+
+<%= form_for [@topic, @article] do |form| %>
+  <%= render "articles/form", form: form %>
+<% end %>
