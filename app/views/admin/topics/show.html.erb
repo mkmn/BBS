@@ -1,0 +1,18 @@
+<h2 id="thread-title"><%= @topic.title %></h2>
+
+<% @topic.articles.each.with_index(1) do |article, index| %>
+  <div class="article">
+    <div class="article-header">
+      [<%= index %>]
+      <%= mail_to article.email, article.poster %> - 
+      <%= article.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+    </div>
+    <div class="article-body">
+      <%= sanitize(simple_format(article.body), tag: %w(p br)) %>
+    </div>
+    <div class="article-footer">
+      <%= link_to "編集", [:edit, :admin, @topic, article] %> |
+      <%= link_to "削除", [:admin, @topic, article], method: :delete %>
+    </div>
+  </div>
+<% end %>

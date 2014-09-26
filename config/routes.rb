@@ -8,5 +8,8 @@ BBS::Application.routes.draw do
 
   namespace 'admin' do
     root to: 'topics#index'
+    resources :topics, except: [:new, :create] do
+      resources :articles, only: [:edit, :update, :destroy]
+    end
   end
 end

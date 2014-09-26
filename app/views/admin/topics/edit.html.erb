@@ -1,7 +1,7 @@
-<h2>新規スレッド投稿</h2>
+<h2>スレッド編集</h2>
 
 <%= render "common/error", object: @topic %>
 
-<%= form_for @topic do |form| %>
+<%= form_for [:admin, @topic] do |form| %>
   <%= render "topics/form", form: form %>
 <% end %>
