@@ -12,4 +12,6 @@ BBS::Application.routes.draw do
       resources :articles, only: [:edit, :update, :destroy]
     end
   end
+
+  match "*anything" => "application#rescue_404"
 end

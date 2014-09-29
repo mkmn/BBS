@@ -2,9 +2,8 @@ require 'test_helper'
 
 class Admin::TopicsControllerTest < ActionController::TestCase
   test "before login" do
-    assert_raise(ApplicationController::Forbidden) {
-      get :index
-    }
+    get :index
+    assert_response 403
   end
 
   test "index" do
