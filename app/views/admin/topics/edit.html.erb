@@ -1,6 +1,6 @@
 <h2>スレッド編集</h2>
 
-<%= render "common/error", object: @topic %>
+<%= render "common/alerts", object: @topic %>
 
 <%= form_for [:admin, @topic] do |form| %>
   <%= render "topics/form", form: form %>

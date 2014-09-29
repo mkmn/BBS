@@ -75,12 +75,21 @@ table, th, td {
   }
 }
 
-#error {
+.alert {
+  margin: 10px auto;
+}
+  
+.notice {
+  background-color: #98FB98;
+  border: 5px double green;
+}
+
+.error {
   color: red;
   background-color: #FFE4E1;
-  margin: 10px auto;
   border: 5px double red;
 }
+
 
 #threads {
   background-color: white;

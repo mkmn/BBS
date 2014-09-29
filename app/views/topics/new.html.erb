@@ -1,6 +1,6 @@
 <h2>新規スレッド投稿</h2>
 
-<%= render "common/error", object: @topic %>
+<%= render "common/alerts", object: @topic %>
 
 <%= form_for @topic do |form| %>
   <%= render "topics/form", form: form %>

@@ -1,6 +1,6 @@
 <h2 id="thread-title"><%= @topic.title %></h2>
 
-<%= render "common/error", object: @article %>
+<%= render "common/alerts", object: @article %>
 
 <% @topic.articles.each.with_index(1) do |article, index| %>
   <div class="article">

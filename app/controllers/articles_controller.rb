@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
     @article = @topic.articles.build(params[:article])
 
     if @article.save
-      redirect_to @topic
+      redirect_to @topic, notice: "投稿しました"
     else
       @topic = Topic.find(params[:topic_id])
       render "topics/show"
