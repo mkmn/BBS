@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to :admin_root
     else
-      redirect_to :session, alert: "名前とパスワードが一致しません"
+      redirect_to :session, flash: { danger: "名前とパスワードが一致しません" }
     end
   end
 

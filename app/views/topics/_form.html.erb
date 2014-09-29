@@ -1,21 +1,21 @@
 <div class="form-group">
   <%= form.label :title %>
-  <%= form.text_field :title %>
+  <%= form.text_field :title, class: "form-control" %>
 </div>
 <%= form.fields_for :articles, @topic.articles.first do |article| %>
   <div class="form-group">
     <%= article.label :poster %>
-    <%= article.text_field :poster %>
+    <%= article.text_field :poster, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= article.label :email %>
-    <%= article.text_field :email %>
+    <%= article.text_field :email, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= article.label :body %>
-    <%= article.text_area :body %>
+    <%= article.text_area :body, class: "form-control" %>
   </div>
 <% end %>
-<div class="form-group center">
-  <%= form.submit %>
-</div>
+<center>
+<%= form.submit "投稿する", class: "btn btn-default" %>
+</center>

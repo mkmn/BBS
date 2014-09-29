@@ -9,13 +9,13 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
     assert_equal user.id, session[:user_id]
 
     follow_redirect!
-    assert_select "div#menu span.admin", /admin/
+    assert_select "nav.navbar-inverse p.navbar-text", /admin/
 
     delete "/session"
     assert_redirected_to "/"
     assert_nil session[:user_id]
 
     follow_redirect!
-    assert_select "div#menu span.admin", false
+    assert_select "nav.navbar-inverse p.navbar-text", false
   end
 end

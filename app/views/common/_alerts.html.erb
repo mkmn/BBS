@@ -1,5 +1,5 @@
 <% flash.each do |type, message| %>
-  <div class="alert <%= type %>">
+  <div class="alert alert-<%= type %>">
     <ul>
       <li><%= message %></li>
     </ul>
@@ -7,7 +7,7 @@
 <% end %>
 
 <% if object && object.errors.any? %>
-  <div class="alert error">
+  <div class="alert alert-danger">
     <ul>
       <% object.errors.full_messages.each do |message| %>
         <li><%= message %></li>

@@ -1,15 +1,23 @@
-<h2>管理ページログイン</h2>
+<div class="page-header">
+  <h2>管理ページログイン</h2>
+</div>
 
-<%= form_tag :session do %>
-  <div class="form-group">
-    <%= label_tag :name, "ユーザ名" %>
-    <%= text_field_tag :name %>
+<%= render "common/alerts", object: nil %>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+  <%= form_tag :session do %>
+    <div class="form-group">
+      <%= label_tag :name, "ユーザ名" %>
+      <%= text_field_tag :name, "", class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :password, "パスワード" %>
+      <%= password_field_tag :password, "", class: "form-control" %>
+    </div>
+    <center>
+      <%= submit_tag "ログイン", class: "btn btn-default" %>
+    </center>
+  <% end %>
   </div>
-  <div class="form-group">
-    <%= label_tag :password, "パスワード" %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="form-group center">
-    <%= submit_tag "ログイン" %>
-  </div>
-<% end %>
+</div>

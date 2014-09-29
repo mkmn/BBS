@@ -1,22 +1,36 @@
-<h2 id="thread-title"><%= @topic.title %></h2>
+<div class="page-header">
+  <h2><%= @topic.title %></h2>
+</div>
 
 <%= render "common/alerts", object: @article %>
 
-<% @topic.articles.each.with_index(1) do |article, index| %>
-  <div class="article">
-    <div class="article-header">
-      [<%= index %>]
-      <%= mail_to article.email, article.poster %> - 
-      <%= article.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+  <% @topic.articles.each.with_index(1) do |article, index| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          [<%= index %>]
+          <%= mail_to article.email, article.poster %> - 
+          <%= article.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <%= sanitize(simple_format(article.body), tag: %w(p br)) %>
+      </div>
     </div>
-    <div class="article-body">
-      <%= sanitize(simple_format(article.body), tag: %w(p br)) %>
-    </div>
+  <% end %>
   </div>
-<% end %>
+</div>
 
-<h2>投稿する</h2>
+<div class="page-header">
+  <h2>投稿する</h2>
+</div>
 
-<%= form_for [@topic, @article] do |form| %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <%= form_for [@topic, @article] do |form| %>
   <%= render "articles/form", form: form %>
-<% end %>
+  <% end %>
+  </div>
+</div>

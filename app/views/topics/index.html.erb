@@ -1,19 +1,19 @@
 <%= render "common/alerts", object: nil %>
 
-<table id="threads">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>スレッドタイトル</th>
-      <th>記事数</th>
-      <th class="time">投稿日</th>
+      <th class="col-md-6">スレッドタイトル</th>
+      <th class="col-md-2">記事数</th>
+      <th class="col-md-4">投稿日</th>
     </tr>
   </thead>
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
-        <td><%= link_to topic.title, topic %></td>
-        <td><%= topic.articles.count %></td>
-        <td class="time"><%= topic.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+        <td class="col-md-6"><%= link_to topic.title, topic %></td>
+        <td class="col-md-2"><%= topic.articles.count %></td>
+        <td class="col-md-4"><%= topic.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
       </tr>
     <% end %>
   </tbody>

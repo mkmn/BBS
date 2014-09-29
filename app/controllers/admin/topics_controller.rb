@@ -16,7 +16,7 @@ class Admin::TopicsController < Admin::Base
     @topic.assign_attributes(params[:topic])
     
     if @topic.save
-      redirect_to [:admin, @topic], notice: "スレッドを更新しました"
+      redirect_to [:admin, @topic], flash: { danger: "スレッドを更新しました" }
     else
       render "edit"
     end
@@ -25,6 +25,6 @@ class Admin::TopicsController < Admin::Base
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy
-    redirect_to [:admin, :topics], notice: "トピックを削除しました"
+    redirect_to [:admin, :topics], flash: { danger: "トピックを削除しました" }
   end
 end

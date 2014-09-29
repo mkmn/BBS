@@ -1,18 +1,26 @@
-<h2 id="thread-title"><%= @topic.title %></h2>
+<div class="page-header">
+  <h2><%= @topic.title %></h2>
+</div>
 
-<% @topic.articles.each.with_index(1) do |article, index| %>
-  <div class="article">
-    <div class="article-header">
-      [<%= index %>]
-      <%= mail_to article.email, article.poster %> - 
-      <%= article.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+<%= render "common/alerts", object: @article %>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+  <% @topic.articles.each.with_index(1) do |article, index| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          [<%= index %>]
+          <%= mail_to article.email, article.poster %> - 
+          <%= article.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <%= sanitize(simple_format(article.body), tag: %w(p br)) %>
+      </div>
+      <div class="panel-footer">
+        <%= link_to "編集", [:edit, :admin, @topic, article], class: "btn btn-info btn-sm" %>
+        <%= link_to "削除", [:admin, @topic, article], method: :delete, class: "btn btn-danger btn-sm" %>
+      </div>
     </div>
-    <div class="article-body">
-      <%= sanitize(simple_format(article.body), tag: %w(p br)) %>
-    </div>
-    <div class="article-footer">
-      <%= link_to "編集", [:edit, :admin, @topic, article] %> |
-      <%= link_to "削除", [:admin, @topic, article], method: :delete %>
-    </div>
-  </div>
-<% end %>
+  <% end %>

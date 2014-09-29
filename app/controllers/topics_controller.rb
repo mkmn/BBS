@@ -17,7 +17,7 @@ class TopicsController < ApplicationController
     @topic = Topic.new(params[:topic])
 
     if @topic.save
-      redirect_to :topics, notice: "新規スレッドを作成しました"
+      redirect_to :topics, flash: { success: "新規スレッドを作成しました" }
     else
       render "new"
     end

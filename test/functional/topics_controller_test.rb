@@ -16,7 +16,6 @@ class TopicsControllerTest < ActionController::TestCase
     get :show, id: topic
     assert_response :success
     assert_equal 10, assigns[:topic].articles.count
-    assert_select ".article", 10
   end
 
   test "new" do

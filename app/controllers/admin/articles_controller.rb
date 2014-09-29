@@ -10,7 +10,7 @@ class Admin::ArticlesController < Admin::Base
     @article.assign_attributes(params[:article])
 
     if @article.save
-      redirect_to [:admin, @topic], notice: "投稿を更新しました"
+      redirect_to [:admin, @topic], flash: { success: "投稿を更新しました" }
     else
       render "edit"
     end
@@ -20,6 +20,6 @@ class Admin::ArticlesController < Admin::Base
     @topic = Topic.find(params[:topic_id])
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to [:admin, @topic], notice: "投稿を削除しました"
+    redirect_to [:admin, @topic], flash: { success: "投稿を削除しました" }
   end
 end
