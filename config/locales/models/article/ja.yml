@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      article: 投稿
+    attributes:
+      article:
+        poster: 投稿者
+        email:  Eメール
+        body:   本文

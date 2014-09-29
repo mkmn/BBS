@@ -1,0 +1,15 @@
+<h2>管理ページログイン</h2>
+
+<%= form_tag :session do %>
+  <div class="form-group">
+    <%= label_tag :name, "ユーザ名" %>
+    <%= text_field_tag :name %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :password, "パスワード" %>
+    <%= password_field_tag :password %>
+  </div>
+  <div class="form-group center">
+    <%= submit_tag "ログイン" %>
+  </div>
+<% end %>

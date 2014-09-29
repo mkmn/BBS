@@ -1,0 +1,13 @@
+<h1>マルチスレッド掲示板</h1>
+<div id="menu">
+  <% if controller.kind_of?(Admin::Base) %>
+    <span class="admin">管理者（<%= @current_user.name %>）でログイン中</span> |
+    <%= link_to "管理TOPページ", :admin_root %> |
+    <%= link_to "掲示板TOPページ", :root %> |
+    <%= link_to "ログアウト", :session, method: :delete %>
+  <% else %>
+    <%= link_to "TOPページ", :root %> |
+    <%= link_to "新規スレッド投稿", [:new, :topic] %> |
+    <%= link_to "管理ページ", :session %>
+  <% end %>
+</div>

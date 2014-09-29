@@ -1,0 +1,22 @@
+<h2 id="thread-title"><%= @topic.title %></h2>
+
+<%= render "common/alerts", object: @article %>
+
+<% @topic.articles.each.with_index(1) do |article, index| %>
+  <div class="article">
+    <div class="article-header">
+      [<%= index %>]
+      <%= mail_to article.email, article.poster %> - 
+      <%= article.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+    </div>
+    <div class="article-body">
+      <%= sanitize(simple_format(article.body), tag: %w(p br)) %>
+    </div>
+  </div>
+<% end %>
+
+<h2>投稿する</h2>
+
+<%= form_for [@topic, @article] do |form| %>
+  <%= render "articles/form", form: form %>
+<% end %>
